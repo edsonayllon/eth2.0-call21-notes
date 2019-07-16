@@ -2,6 +2,8 @@
 
 ## Contents
 
+
+- [Contents](#contents)
 - [1 Meeting Details](#1-meeting-details)
 - [2 Attendees](#2-attendees)
 - [3 Agenda](#3-agenda)
@@ -32,38 +34,11 @@
 	- [3.6 Open Discussion/Closing Remarks](#36-open-discussionclosing-remarkshttpsyoutubeyb8o5qjnbct5540)
 
 
+
 ## 1 Meeting Details
 
 - **Meeting Date-Time:** Thursday 2019/7/11 at [14:00 GMT](http://www.timebie.com/std/gmt.php?q=14)
-- **Meeting Duration:- [Contents](#contents)
-- [1 Meeting Details](#1-meeting-details)
-- [2 Attendees](#2-attendees)
-- [3 Agenda](#3-agenda)
-	- [3.1 Testing Updates](#31-testing-updateshttpsyoutubeyb8o5qjnbct245)
-		- [3.1.1 Overflow in Slashing](#311-overflow-in-slashinghttpsgithubcomethereumeth20-specspull1286)
-		- [3.1.2 Spec Freeze](#312-spec-freezehttpsgithubcomethereumeth20-specspull1242)
-		- [3.1.3 Fuzzing](#313-fuzzinghttpsgithubcomethereumeth20-specstreedevtestlibspyspeceth2specfuzzing)
-	- [3.2 Client Updates](#32-client-updateshttpsyoutubeyb8o5qjnbct830)
-		- [3.2.1 Nimbus](#321-nimbushttpsgithubcomstatus-imnimbus)
-		- [3.2.2 Artemis](#322-artemishttpsgithubcompegasysengartemis)
-		- [3.2.3 Trinity](#323-trinityhttpsgithubcomethereumtrinity)
-		- [3.2.4 Yeeth](#324-yeethhttpsgithubcomyeeth)
-		- [3.2.5 Harmony](#325-harmonyhttpsdocsethhubioethereum-roadmapethereum-20eth20-teamsharmony)
-		- [3.2.6 Lighthouse](#326-lighthousehttpsgithubcomsigplighthouse)
-		- [3.2.7 Prysmatic)](#327-prysmatichttpsgithubcomprysmaticlabs)
-		- [3.2.8 Lodestar](#328-lodestarhttpsgithubcomchainsafelodestar)
-		- [3.2.9 Parity](#329-parityhttpsgithubcomparitytechparity-ethereum)
-	- [3.3 Research Updates](#33-research-updateshttpsyoutubeyb8o5qjnbct1725)
-		- [3.3.1 Phase 0](#331-phase-0httpsdocsethhubioethereum-roadmapethereum-20eth-20-phases)
-		- [3.3.2 Phase 1](#332-phase-1httpsdocsethhubioethereum-roadmapethereum-20eth-20-phases)
-		- [3.3.3 Phase 2](#333-phase-2httpsdocsethhubioethereum-roadmapethereum-20eth-20-phases)
-		- [3.3.4 PegaSys](#334-pegasyshttpsgithubcompegasyseng)
-		- [3.3.5 Runtime Verification](#335-runtime-verificationhttpsgithubcomruntimeverificationalgorand-verification)
-	- [3.4 Network](#34-networkhttpsyoutubeyb8o5qjnbct2470)
-		- [3.4.1 Libp2p](#341-libp2phttpsgithubcomlibp2pjs-libp2p)
-		- [3.4.2 Gossiping Mechanism and Episub](#342-gossiping-mechanism-and-episubhttpsgithubcomlibp2pspecsblobmasterpubsubgossipsubepisubmdartemis-prysmatic-labs-lodestar-handles-exchange)
-	- [3.5 Spec Discussion](#35-spec-discussionhttpsyoutubeyb8o5qjnbct5095)
-	- [3.6 Open Discussion/Closing Remarks](#36-open-discussionclosing-remarkshttpsyoutubeyb8o5qjnbct5540)** 1.5 hours
+- **Meeting Duration:** 1.5 hours
 - **[Youtube Livestream](https://www.youtube.com/watch?v=YB8o_5qjNBc)**
 
 ## 2 Attendees
