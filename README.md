@@ -1,21 +1,42 @@
-# eth2.0-call21-notes
+# Ethereum 2.0 Implementers Call 21 Notes
+
+## Contents
+
+<!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Contents](#contents)
+- [1 Meeting Details](#1-meeting-details)
+- [2 Attendees](#2-attendees)
+- [3 Agenda](#3-agenda)
+	- [3.1 [Testing Updates](https://youtu.be/YB8o_5qjNBc?t=245)](#31-testing-updateshttpsyoutubeyb8o5qjnbct245)
+	- [3.2 [Client Updates](https://youtu.be/YB8o_5qjNBc?t=830)](#32-client-updateshttpsyoutubeyb8o5qjnbct830)
+	- [3.3 [Research Updates](https://youtu.be/YB8o_5qjNBc?t=1725)](#33-research-updateshttpsyoutubeyb8o5qjnbct1725)
+	- [3.4 [Network](https://youtu.be/YB8o_5qjNBc?t=2470)](#34-networkhttpsyoutubeyb8o5qjnbct2470)
+	- [3.5 [Spec Discussion](https://youtu.be/YB8o_5qjNBc?t=5095)](#35-spec-discussionhttpsyoutubeyb8o5qjnbct5095)
+	- [3.6 [Open Discussion/Closing Remarks](https://youtu.be/YB8o_5qjNBc?t=5540)](#36-open-discussionclosing-remarkshttpsyoutubeyb8o5qjnbct5540)
+
+<!-- /TOC -->
 
 
-## [Testing Updates](https://youtu.be/YB8o_5qjNBc?t=245)
+## 1 Meeting Details
+
+## 2 Attendees
+
+## 3 Agenda
+
+### 3.1 [Testing Updates](https://youtu.be/YB8o_5qjNBc?t=245)
 
 
-## [Client Updates](https://youtu.be/YB8o_5qjNBc?t=830)
+### 3.2 [Client Updates](https://youtu.be/YB8o_5qjNBc?t=830)
 
 
-## [Research Updates](https://youtu.be/YB8o_5qjNBc?t=1725)
+### 3.3 [Research Updates](https://youtu.be/YB8o_5qjNBc?t=1725)
 
 
-## [Network](https://youtu.be/YB8o_5qjNBc?t=2470)
+### 3.4 [Network](https://youtu.be/YB8o_5qjNBc?t=2470)
 
 
-## [Spec Discussion](https://youtu.be/YB8o_5qjNBc?t=5095)
+### 3.5 [Spec Discussion](https://youtu.be/YB8o_5qjNBc?t=5095)
 
 
-## [Open Discussion/Closing Remarks](https://youtu.be/YB8o_5qjNBc?t=5540)
-
- 
+### 3.6 [Open Discussion/Closing Remarks](https://youtu.be/YB8o_5qjNBc?t=5540)
