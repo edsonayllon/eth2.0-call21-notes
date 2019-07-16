@@ -90,9 +90,10 @@
 
 ### 3.1 [Testing Updates](https://youtu.be/YB8o_5qjNBc?t=245)
 
-**Timestamp: [4:06](https://youtu.be/YB8o_5qjNBc?t=245)**
 
 #### 3.1.1 [Overflow in Slashing](https://github.com/ethereum/eth2.0-specs/pull/1286)
+
+**Timestamp: [4:06](https://youtu.be/YB8o_5qjNBc?t=245)**
 
 **Danny Ryan**: Prysmatic Labs, Terence [Tsao], found an issue where the calculation and slashing was, due to the way it was formatted, potentially overflowing in a tester for `uint64`
 
@@ -100,11 +101,16 @@ Relatively non-substantive changes (fixes, documentation, and things) in v08x br
 
 #### 3.1.2 [Spec Freeze](https://github.com/ethereum/eth2.0-specs/pull/1242)
 
+**Timestamp: [5:12](https://youtu.be/YB8o_5qjNBc?t=309)**
+
 **Diederik Loerakker**: Spec Freeze is over now, can stop throwing up to the spec and build.
 
 **Danny Ryan**: Even after the Spec Freeze we will be expanding the coverage of the tests as needed.
 
 #### 3.1.3 [Fuzzing](https://github.com/ethereum/eth2.0-specs/tree/dev/test_libs/pyspec/eth2spec/fuzzing)
+
+**Timestamp: [6:51](https://youtu.be/YB8o_5qjNBc?t=411)**
+
 
 **Justin Drake**: Goal: Basic Fuzzing infrastructure for all the clients.
   * Client implementers don't have to worry too much about being compliant with the State Transition Function.
