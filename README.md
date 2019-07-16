@@ -214,12 +214,18 @@ We have a EWASM research library and we are very happy with. We have started a d
 On Ethereum 1, we had some connections issues that were resolved to Parity and Jeff.
 
 #### 3.2.2 [Artemis](https://github.com/PegaSysEng/artemis)
+
+**Timestamp: [17:05](https://youtu.be/YB8o_5qjNBc?t=1025)**
+
 **Jonny Rhea**: We've updated to there especially with the SSE
 
 Also been thinking about a tester slashings, computational requirements for the worst scenario
 
 
 #### 3.2.3 [Trinity](https://github.com/ethereum/trinity)
+
+**Timestamp: [17:51](https://youtu.be/YB8o_5qjNBc?t=1071)**
+
 **Hsiao-Wei Wang**: Py SSE has been synced to v0.8 and the State Transition update is ongoing. I think it almost there thanks to Alex.
 
 For the networking side, integrating with the Py library, we found some required issues that we need to fix on the upstream library.
@@ -227,9 +233,15 @@ For the networking side, integrating with the Py library, we found some required
 We are fixing some interoperability requirements and there is an insecure connections stake.
 
 #### 3.2.4 [Yeeth](https://github.com/yeeth)
+
+**Timestamp: [19:11](https://youtu.be/YB8o_5qjNBc?t=1151)**
+
 **Dean Eigenmann**: I started helping out a bit on Artemis but handed that off again. So now I'm back on updating Yeeth to the latest spec version.
 
 #### 3.2.5 [Harmony](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth2.0-teams/harmony/)
+
+**Timestamp: [19:37](https://youtu.be/YB8o_5qjNBc?t=1176)**
+
 **Mikhail Kalinin**: Working on an update to v0.8 spec, we're almost there, but SSE part is still in progress.
 
 We started to work on a slot clock mechanism, which is based on network-adjusted time proposed by Vitalik.
@@ -245,6 +257,9 @@ Worked on multistream implementation recently.
 
 
 #### 3.2.6 [Lighthouse](https://github.com/sigp/lighthouse)
+
+**Timestamp: [20:57](https://youtu.be/YB8o_5qjNBc?t=1257)**
+
 **Adrian Manning**: Updating lighthouse to v0.8
 
 
@@ -270,6 +285,9 @@ In doing so we've had to update our RPC. In particular there's a discussion for 
 
 
 #### 3.2.7 [Prysmatic](https://github.com/prysmaticlabs)
+
+**Timestamp: [22:22](https://youtu.be/YB8o_5qjNBc?t=1342)**
+
 **Raul Jordan**: Caught up to v0.8, passing all spec tests.
 
 Issues with Genesis trigger.
@@ -281,6 +299,9 @@ Having coverage for longer based lists can be good in SSE.
 Getting ready for optimizing Prism, code improvements, beautician testing, improvements to clients
 
 #### 3.2.8 [Lodestar](https://github.com/ChainSafe/lodestar)
+
+**Timestamp: [24:03](https://youtu.be/YB8o_5qjNBc?t=1443)**
+
 **Greg Markou**: Trying to upgrade to v0.8.
 
 Began building dev tooling.
@@ -306,6 +327,9 @@ Getting ready to do dev-tooling.
 Also, NIM, we're coming after you guys on the ERC20 contract, we'll get ya.
 
 #### 3.2.9 [Parity](https://github.com/paritytech/parity-ethereum)
+
+**Timestamp: [27:54](https://youtu.be/YB8o_5qjNBc?t=1624)**
+
 **Wei Tang**: Finished the markolization library last week, hopefully, want to extend that into a caching library, but a few missing pieces.
 
 We're trying to update to v0.8 spec, issue we had was in the SSE which was quite a change.
@@ -313,7 +337,12 @@ We're trying to update to v0.8 spec, issue we had was in the SSE which was quite
 Large refactoring of the codebase.
 
 ### 3.3 [Research Updates](https://youtu.be/YB8o_5qjNBc?t=1725)
+
+**Timestamp: [29:08](https://youtu.be/YB8o_5qjNBc)**
+
 #### 3.3.1 [Phase 0](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-phases/)
+
+**Timestamp: [34:50](https://youtu.be/YB8o_5qjNBc?t=2083)**
 
 **Justin Drake**: In parallel to Phase 1 & Phase 2, the research team is doing is more education about Phase 0.
 
@@ -324,77 +353,101 @@ Now that the spec is frozen, if you have questions about the design, feel free t
 
 #### 3.3.2 [Phase 1](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-phases/)
 
-**Vitalik Buterin**: On research-side there's a list of To-Do's for Proof-of-Custody and Shard Blocks
-  * Discovered that our approach to light clients that involved Fiat Shimmering and Active Experts didn't particularly make sense
-      * Simpler approach: Sign over the committee's route and allow clients to verify the committee's route directly
-  * Simplifies and reduces the cost of the client protocol.
-  * But still some decision to make around what the committees are for each slot and how those committees change
-  * I'd base some of the trade-offs between the properties of light clients and properties of old clients and different kinds of efficiency and safety properties.
-  * In general:
-      * Phase 0 including in the blocks some of the routes of the persist crosslink committees
-      * Phase 1 including a route of the persistent committees
-  * We get a nice, really efficient, light clients. Worst-case: only slightly less efficient, in terms of bytes-per-second, than Bitcoin block headers. Best-case: Much more efficient.
-  * There's still just parameters to decide.
-  * Figuring out the exact structure of data in crosslinks; the tradeoff between packing the data tightly versus putting the data for each of the Block headers into a consistent position.
-      * Recently I'm leaning towards packing the data tightly, taking the data for each block-header and block, placing them beside each other. It's one of the possible approaches, not the only.
-  * Not too much to do on the Shard Block side
-  * Have a PR which, among other things, it switches from multiple attestations and a proposers signature to just having one signature that includes a proposer in the attestations. That there as an option as well.
-  * Not seeing any unexpected difficulties on the Phase 1 side. It's looking better and better.
+**Timestamp: [29:08](https://youtu.be/YB8o_5qjNBc)**
 
-**Justin Drake**:
-* To add on Phase 1, we're likely to have some cryptanalysis done
-* Kovatovich analyze the cryptography that used there.
-* One of the primitives we're using is the Lujon symbol, as a PRF
-* It looks fine and there's various security mechanism we can put in place, but it would still be good to have it audited because it's an assumption that's not used in production right now.
+**Vitalik Buterin**: On research-side there's a list of To-Do's for Proof-of-Custody and Shard Blocks
+
+Discovered that our approach to light clients that involved Fiat Shimmering and Active Experts didn't particularly make sense.
+
+Simpler approach: Sign over the committee's route and allow clients to verify the committee's route directly. Simplifies and reduces the cost of the client protocol.
+
+But still some decision to make around what the committees are for each slot and how those committees change.
+
+I'd base some of the trade-offs between the properties of light clients and properties of old clients and different kinds of efficiency and safety properties. In general:
+  * Phase 0 including in the blocks some of the routes of the persist crosslink committees
+  * Phase 1 including a route of the persistent committees
+
+We get a nice, really efficient, light clients. Worst-case: only slightly less efficient, in terms of bytes-per-second, than Bitcoin block headers. Best-case: Much more efficient. There's still just parameters to decide.
+
+
+Figuring out the exact structure of data in crosslinks; the tradeoff between packing the data tightly versus putting the data for each of the Block headers into a consistent position.
+
+Recently I'm leaning towards packing the data tightly, taking the data for each block-header and block, placing them beside each other. It's one of the possible approaches, not the only.
+
+
+Not too much to do on the Shard Block side.
+
+Have a PR which, among other things, it switches from multiple attestations and a proposers signature to just having one signature that includes a proposer in the attestations. That there as an option as well.
+
+Not seeing any unexpected difficulties on the Phase 1 side. It's looking better and better.
+
+**Justin Drake**: To add on Phase 1, we're likely to have some cryptanalysis done.  Kovatovich analyze the cryptography that used there.
+
+One of the primitives we're using is the Lujon symbol, as a PRF. It would still be good to have it audited because it's an assumption that's not used in production right now.
 
 #### 3.3.3 [Phase 2](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-phases/)
-**Vitalik Buterin**
-* Not much progress from myself.
-* One of the bigger issues and trade-offs to think about is still how free markets would work.
-* Would be good to get more feedback on that.
-* The Plasma people are going to release a post on OVM very soon.
 
-**Will Villanueva**:
-* Continuing work on SSE partials
-* In the last call we talked about kicking off a Phase 1 implementation, so we can bind together the workaround scout and some of the work the EWASM team has done.
-* Will have Phase 1 & Phase 2 testnet, to rally people around having something tangible to test executable environment and other assumptions.
-* In general, the scout codebase is in Rust, we've been Rust-focused
-* We'll be going ahead and building that off the work Lighthouse has done to build the prototype.
-* We are kicking that off next week.
-* Started diving into some research connected to Vitalik's post on State Schemes
-    * Found a pretty novel approach/idea on how to iterate on that
-    * How to build an on-chain multi-shard state scheme that can support generalized contracts
-    * This all follows the delayed-state execution model
-* Posted first-half on Ethereum Research yesterday and we'll be posting the second-half and the applicability to state schemes and Ethereum 2 and multi-shard behavior and what that can open up. Open to feedback on this as there are some cool applications there.
+**Timestamp: [33:06](https://youtu.be/YB8o_5qjNBc?t=1986)**
+
+**Vitalik Buterin**: Not much progress from myself. One of the bigger issues and trade-offs to think about is still how free markets would work. Would be good to get more feedback on that.
+
+The Plasma people are going to release a post on OVM very soon.
+
+**Will Villanueva**: Continuing work on SSE partials.
+
+Will have Phase 1 & Phase 2 testnet, to rally people around having something tangible to test executable environment and other assumptions.
+
+In general, the scout codebase is in Rust.
+
+We'll be going ahead and building that off the work Lighthouse has done to build the prototype. Kicking that off next week.
+
+Started diving into some research connected to Vitalik's post on State Schemes
+  * Found a pretty novel approach/idea on how to iterate on that
+  * How to build an on-chain multi-shard state scheme that can support generalized contracts
+  * This all follows the delayed-state execution model
+
+Posted first-half on Ethereum Research yesterday and we'll be posting the second-half and the applicability to state schemes and Ethereum 2 and multi-shard behavior and what that can open up. Open to feedback on this as there are some cool applications there.
   - [Layer 2 state schemes](https://ethresear.ch/t/layer-2-state-schemes/5691)
-* The free market stuff we didn't continue diving as we've been in transition, we'll be looking into that these coming weeks.
-* Team is growing. John Adler is collaborating with us. Trying to grow for Rust-based researchers. Trying to do more research on Phase 1/Phase 2 in parallel to expand a lot of this.
+
+The free market stuff we didn't continue diving as we've been in transition, we'll be looking into that these coming weeks.
+
+Team is growing. John Adler is collaborating with us. Trying to grow for Rust-based researchers. Trying to do more research on Phase 1/Phase 2 in parallel to expand a lot of this.
 
 #### 3.3.4 [PegaSys](https://github.com/PegaSysEng)
-* We continue to work on hold-ups. Nothing yet.
+
+**Timestamp: [39:28](https://youtu.be/YB8o_5qjNBc?t=2368)**
+
+We continue to work on hold-ups. Nothing yet.
 
 #### 3.3.5 [Runtime Verification](https://github.com/runtimeverification/algorand-verification)
-**Musab Alturk**:
-* We have this formalization in the K framework, directly based on the specification.
-* Migrated to v0.8 and are looking to have something testable.
-* There's an abstract model, lower priority type of development at the moment, but helpful for the future.
+
+**Timestamp: [39:44](https://youtu.be/YB8o_5qjNBc?t=2384)**
+
+**Musab Alturk**: We have this formalization in the K framework, directly based on the specification.
+
+Migrated to v0.8 and are looking to have something testable.
+
+There's an abstract model, lower priority type of development at the moment, but helpful for the future.
 
 ### 3.4 [Network](https://youtu.be/YB8o_5qjNBc?t=2470)
 
 
 #### 3.4.1 [Libp2p](https://github.com/libp2p/js-libp2p)
 
-**Mike Goelzer**
-* Grant front, the grant that we're making to Harmony for the minimal JVM libp2p that was mentioned, will be finalized Monday.
-* About six weeks ago there was a discussion about js-libp2p not being "production-ready". We went to chain safe folks who are working most closely on js-libp2p and asked: "hey what would you do to make this production-ready?" They put together a proposal primarily about switching to typesafe Javascript to Typescript and improvements to the documentation and examples.
-* What I wanted to check with the folks on this call, are there any concerns on js-libp2p that we should be addressing, either us or chain safe.
-    * The reason is I want to make a grant to them to get js-libp2p to a production-ready state and I want to include everything.
-    * js-ibp2p has been in production on IPFS, so it's not completely untested. But I do understand that Ethereum might have different requirements.
-* Any opinions please let me know.
-    * @MikeGoelzer on Telegram
-* Last thing, will say more on next call. We're working with the Ethereum community to answer questions about what is Protocol Labs relationship to libp2p and about the project in general.
-    * Haven't done a great job out of neglect.
-    * When we have written answers to all the question, we will share them with the community.
+**Timestamp: [41:10](https://www.youtube.com/watch?v=YB8o_5qjNBc&feature=youtu.be&t=2470)**
+
+**Mike Goelzer** Grant front, the grant that we're making to Harmony for the minimal JVM libp2p that was mentioned, will be finalized Monday.
+
+We went to chain safe folks who are working most closely on js-libp2p and asked: "hey what would you do to make this production-ready?" They put together a proposal primarily about switching to typesafe Javascript to Typescript and improvements to the documentation and examples.
+
+
+Are there any concerns on js-libp2p that we should be addressing, either us or chain safe. I want to make a grant to them to get js-libp2p to a production-ready state and I want to include everything.
+
+js-ibp2p has been in production on IPFS, so it's not completely untested. But I do understand that Ethereum might have different requirements.
+
+Any opinions please let me know. Telegram: @MikeGoelzer.
+
+We're working with the Ethereum community to answer questions about what is Protocol Labs relationship to libp2p and about the project in general.When we have written answers to all the question, we will share them with the community.
 
 
 **Raúl Kripalani**:
@@ -530,6 +583,8 @@ Now that the spec is frozen, if you have questions about the design, feel free t
 
 #### 3.4.2 Gossiping Mechanism and [Episub](https://github.com/libp2p/specs/blob/master/pubsub/gossipsub/episub.md)—Artemis, Prysmatic Labs, Lodestar Handles Exchange
 
+**Timestamp: [1:07:56](https://youtu.be/YB8o_5qjNBc?t=4076)**
+
 **Whiteblock**:
 * Internal last week we had three common teams in the same room: Artemis, Prysmatic Labs, Lodestar.
 * Able to have an exchange of handles between Prysmatic and Artemis using the Simple Hobbits approach.
@@ -661,6 +716,8 @@ Now that the spec is frozen, if you have questions about the design, feel free t
 
 ### 3.5 [Spec Discussion](https://youtu.be/YB8o_5qjNBc?t=5095)
 
+**Timestamp: [1:24:57](https://youtu.be/YB8o_5qjNBc?t=5095)**
+
 **Danny Ryan**:
 * I know implementers mentioned the SSE. There were a couple more escape types that were added to SSE, specifically the Bit List and Bit Vector, that moves some of the low-level validation of bytes out the spec and into the typing system.
 * This was done:
@@ -717,15 +774,16 @@ Now that the spec is frozen, if you have questions about the design, feel free t
 
 ### 3.6 [Open Discussion/Closing Remarks](https://youtu.be/YB8o_5qjNBc?t=5540)
 
+**Timestamp: [1:32:20](https://youtu.be/YB8o_5qjNBc)**
 
-**Danny Ryan**:
-* Any other things before we close today?
+**Danny Ryan**: Any other things before we close today?
 
-**Joseph Delong**:
-* For the interop, I just wanna say that the invitations went out to team leads. Those invitations are good until the 14th. And for the Antoine's in the call, that's Bastille Day.
-* After that, we're gonna reshuffle and send out more invitations to some of the teams that are wanting to attend. So make sure that you register.
-* There are a bunch of teams that haven't registered. Please do register in the next 3 days.
+**Joseph Delong**: For the interop, I just wanna say that the invitations went out to team leads. Those invitations are good until the 14th. And for the Antoine's in the call, that's Bastille Day.
 
-**Danny Ryan**:
-* It's easy and free to register.
-* We'll meet in 2 weeks, take a look at the calendar first. See ya.
+After that, we're gonna reshuffle and send out more invitations to some of the teams that are wanting to attend. So make sure that you register.
+
+There are a bunch of teams that haven't registered. Please do register in the next 3 days.
+
+**Danny Ryan**: It's easy and free to register.
+
+We'll meet in 2 weeks, take a look at the calendar first. See ya.
