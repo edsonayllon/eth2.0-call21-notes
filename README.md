@@ -20,6 +20,10 @@
 
 ## 1 Meeting Details
 
+- **Meeting Date-Time:** Thursday 2019/7/11 at [14:00 GMT](http://www.timebie.com/std/gmt.php?q=14)
+- **Meeting Duration:** 1.5 hours
+- **[Youtube Livestream](https://www.youtube.com/watch?v=YB8o_5qjNBc)**
+
 ## 2 Attendees
 
 ## 3 Agenda
