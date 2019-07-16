@@ -184,26 +184,34 @@ We'll keep everyone updated about Fuzzing over the coming weeks.
 
 ### 3.2 [Client Updates](https://youtu.be/YB8o_5qjNBc?t=830)
 
+#### 3.2.1 [Nimbus](https://github.com/status-im/nimbus)
+
 **Timestamp: [13:50](https://youtu.be/YB8o_5qjNBc?t=830)**
 
-#### 3.2.1 [Nimbus](https://github.com/status-im/nimbus)
-**Mamy**:
-* We launched our testnet 1, based on libp2p daemon, this morning
-* We need to adapt the script, so that it starts with a single common because libp2p daemon is not built but it's almost done. Pretty soon by the end of the week.
-* We are towards v0.8, all the small changes were integrated and right now a big focus is SSE
-* We also started to align our State Transition function with PySpec in terms of naming
-  * This is also to improve and facilitate testing
-* We had significant parse improvement during the past week, accumulated 20 to 30x speed-up on the State Transition bench. We identified 3 bottlenecks:
+
+**Mamy**: We launched our testnet 1, based on libp2p daemon, this morning
+
+We are towards v0.8, all the small changes were integrated and right now a big focus is SSE
+
+We also started to align our State Transition function with PySpec in terms of naming.
+
+We had significant parse improvement during the past week, accumulated 20 to 30x speed-up on the State Transition bench. We identified 3 bottlenecks:
   * In `process_crosslinks(...)` & `get_crosslinke_deltas(...)`. So both combined we had the 10x speed improvement
   * `get_crosslink_committee(...)` via caching, we improved by 2x the speed
-* I can put or PR in the chat, so that if people are interested in seeing what we did, they can reproduce. Since we follow the spec-naming it should be very easy to navigate.
+
+
+If people are interested in seeing what we did, they can reproduce. Since we follow the spec-naming it should be very easy to navigate.
   * [Speed up process_crosslinks(...) and get_crosslink_deltas(...) by 10x - 15x in state_sim #314](https://github.com/status-im/nim-beacon-chain/pull/314)
   * [~2x state_sim speedup via additional caching in get_crosslink_committee #316](https://github.com/status-im/nim-beacon-chain/pull/316)
-* We also published metrics library for Prometheus compact metrics:
+
+Published metrics library for Prometheus compact metrics:
   * [Nim metrics client library supporting the Prometheus monitoring toolkit](https://github.com/status-im/nim-metrics)
-* We have a EWASM research library and we are very happy with. We have started a domain specific language in NIM that compiles to EWASM. It's quite competitive in terms of contract size:
+
+
+We have a EWASM research library and we are very happy with. We have started a domain specific language in NIM that compiles to EWASM. It's quite competitive in terms of contract size:
   * [Nimplay is Domain Specific Language for writing smart contracts in Ethereum, using the Nim macro system](https://github.com/status-im/nimplay)
-* Lastly on Ethereum 1, we had some connections issues that were resolved to Parity and Jeff.
+
+On Ethereum 1, we had some connections issues that were resolved to Parity and Jeff.
 
 #### 3.2.2 [Artemis](https://github.com/PegaSysEng/artemis)
 **Jonny Rhea**:
