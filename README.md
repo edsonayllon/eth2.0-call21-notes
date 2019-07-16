@@ -23,6 +23,11 @@
 		- [3.2.8 [Lodestar](https://github.com/ChainSafe/lodestar)](#328-lodestarhttpsgithubcomchainsafelodestar)
 		- [3.2.9 [Parity](https://github.com/paritytech/parity-ethereum)](#329-parityhttpsgithubcomparitytechparity-ethereum)
 	- [3.3 [Research Updates](https://youtu.be/YB8o_5qjNBc?t=1725)](#33-research-updateshttpsyoutubeyb8o5qjnbct1725)
+		- [3.3.1 [Phase 0](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-phases/)](#331-phase-0httpsdocsethhubioethereum-roadmapethereum-20eth-20-phases)
+		- [3.3.2 [Phase 1](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-phases/)](#332-phase-1httpsdocsethhubioethereum-roadmapethereum-20eth-20-phases)
+		- [3.3.3 [Phase 2](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-phases/)](#333-phase-2httpsdocsethhubioethereum-roadmapethereum-20eth-20-phases)
+		- [3.3.4 [PegaSys](https://github.com/PegaSysEng)](#334-pegasyshttpsgithubcompegasyseng)
+		- [3.3.5 [Runtime Verification](https://github.com/runtimeverification/algorand-verification)](#335-runtime-verificationhttpsgithubcomruntimeverificationalgorand-verification)
 	- [3.4 [Network](https://youtu.be/YB8o_5qjNBc?t=2470)](#34-networkhttpsyoutubeyb8o5qjnbct2470)
 	- [3.5 [Spec Discussion](https://youtu.be/YB8o_5qjNBc?t=5095)](#35-spec-discussionhttpsyoutubeyb8o5qjnbct5095)
 	- [3.6 [Open Discussion/Closing Remarks](https://youtu.be/YB8o_5qjNBc?t=5540)](#36-open-discussionclosing-remarkshttpsyoutubeyb8o5qjnbct5540)
@@ -303,7 +308,73 @@
 
 
 ### 3.3 [Research Updates](https://youtu.be/YB8o_5qjNBc?t=1725)
+#### 3.3.1 [Phase 0](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-phases/)
 
+**Justin Drake**:
+* In parallel to Phase 1 & Phase 2, the research team is doing is more education about Phase 0
+    * Various Education documents, I'm working on one as well
+    * On July 15th 1:00 PM GMT there will be a 2nd Ethereum 2.0 AMA, great opportunity to ask and answer questions related to your implementation work
+* Now that the spec is frozen, if you have questions about the design, feel free to reach out. I'm for example Justin Drake on Telegram.
+
+
+#### 3.3.2 [Phase 1](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-phases/)
+
+**Vitalik Buterin**
+
+  * On research-side there's a list of To-Do's for Proof-of-Custody and Shard Blocks
+  * Discovered that our approach to light clients that involved Fiat Shimmering and Active Experts didn't particularly make sense
+      * Simpler approach: Sign over the committee's route and allow clients to verify the committee's route directly
+  * Simplifies and reduces the cost of the client protocol.
+  * But still some decision to make around what the committees are for each slot and how those committees change
+  * I'd base some of the trade-offs between the properties of light clients and properties of old clients and different kinds of efficiency and safety properties.
+  * In general:
+      * Phase 0 including in the blocks some of the routes of the persist crosslink committees
+      * Phase 1 including a route of the persistent committees
+  * We get a nice, really efficient, light clients. Worst-case: only slightly less efficient, in terms of bytes-per-second, than Bitcoin block headers. Best-case: Much more efficient.
+  * There's still just parameters to decide.
+  * Figuring out the exact structure of data in crosslinks; the tradeoff between packing the data tightly versus putting the data for each of the Block headers into a consistent position.
+      * Recently I'm leaning towards packing the data tightly, taking the data for each block-header and block, placing them beside each other. It's one of the possible approaches, not the only.
+  * Not too much to do on the Shard Block side
+  * Have a PR which, among other things, it switches from multiple attestations and a proposers signature to just having one signature that includes a proposer in the attestations. That there as an option as well.
+  * Not seeing any unexpected difficulties on the Phase 1 side. It's looking better and better.
+
+**Justin Drake**:
+* To add on Phase 1, we're likely to have some cryptanalysis done
+* Kovatovich analyze the cryptography that used there.
+* One of the primitives we're using is the Lujon symbol, as a PRF
+* It looks fine and there's various security mechanism we can put in place, but it would still be good to have it audited because it's an assumption that's not used in production right now.
+
+#### 3.3.3 [Phase 2](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-phases/)
+**Vitalik Buterin**
+* Not much progress from myself.
+* One of the bigger issues and trade-offs to think about is still how free markets would work.
+* Would be good to get more feedback on that.
+* The Plasma people are going to release a post on OVM very soon.
+
+**Will Villanueva**:
+* Continuing work on SSE partials
+* In the last call we talked about kicking off a Phase 1 implementation, so we can bind together the workaround scout and some of the work the EWASM team has done.
+* Will have Phase 1 & Phase 2 testnet, to rally people around having something tangible to test executable environment and other assumptions.
+* In general, the scout codebase is in Rust, we've been Rust-focused
+* We'll be going ahead and building that off the work Lighthouse has done to build the prototype.
+* We are kicking that off next week.
+* Started diving into some research connected to Vitalik's post on State Schemes
+    * Found a pretty novel approach/idea on how to iterate on that
+    * How to build an on-chain multi-shard state scheme that can support generalized contracts
+    * This all follows the delayed-state execution model
+* Posted first-half on Ethereum Research yesterday and we'll be posting the second-half and the applicability to state schemes and Ethereum 2 and multi-shard behavior and what that can open up. Open to feedback on this as there are some cool applications there.
+  - [Layer 2 state schemes](https://ethresear.ch/t/layer-2-state-schemes/5691)
+* The free market stuff we didn't continue diving as we've been in transition, we'll be looking into that these coming weeks.
+* Team is growing. John Adler is collaborating with us. Trying to grow for Rust-based researchers. Trying to do more research on Phase 1/Phase 2 in parallel to expand a lot of this.
+
+#### 3.3.4 [PegaSys](https://github.com/PegaSysEng)
+* We continue to work on hold-ups. Nothing yet.
+
+#### 3.3.5 [Runtime Verification](https://github.com/runtimeverification/algorand-verification)
+**Musab Alturk**:
+* We have this formalization in the K framework, directly based on the specification.
+* Migrated to v0.8 and are looking to have something testable.
+* There's an abstract model, lower priority type of development at the moment, but helpful for the future.
 
 ### 3.4 [Network](https://youtu.be/YB8o_5qjNBc?t=2470)
 
