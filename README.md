@@ -214,105 +214,117 @@ We have a EWASM research library and we are very happy with. We have started a d
 On Ethereum 1, we had some connections issues that were resolved to Parity and Jeff.
 
 #### 3.2.2 [Artemis](https://github.com/PegaSysEng/artemis)
-**Jonny Rhea**:
-* We've updated to there especially with the SSE
-* Also been thinking about a tester slashings, computational requirements for the worst scenario
-* We see the need to investigate the network load, you know from the attestations to decide what strategy to use when we're aggregating.
-* That's the stuff we've been thinking about. Pretty much it.
+**Jonny Rhea**: We've updated to there especially with the SSE
+
+Also been thinking about a tester slashings, computational requirements for the worst scenario
+
 
 #### 3.2.3 [Trinity](https://github.com/ethereum/trinity)
-**Hsiao-Wei Wang**:
-* Regarding specs Py SSE has been synced to v0.8 and the State Transition update is ongoing. I think it almost there thanks to Alex
-* For the networking side, integrating with the Py library, we found some required issues that we need to fix on the upstream library.
-* Also we are fixing some interoperability requirements and there is an insecure connections stake I'm posting here, I think Keven and maybe Raul will introduce it in the networking section. After the client update.
-* That's the Trinity side, thank you.
+**Hsiao-Wei Wang**: Py SSE has been synced to v0.8 and the State Transition update is ongoing. I think it almost there thanks to Alex.
+
+For the networking side, integrating with the Py library, we found some required issues that we need to fix on the upstream library.
+
+We are fixing some interoperability requirements and there is an insecure connections stake.
 
 #### 3.2.4 [Yeeth](https://github.com/yeeth)
-**Dean Eigenmann**:
-* I was doing some stuff with like the inter-op guys last week, I started helping out a bit on Artemis but handed that off again. So now I'm back on updating Yeeth to the latest spec version.
+**Dean Eigenmann**: I started helping out a bit on Artemis but handed that off again. So now I'm back on updating Yeeth to the latest spec version.
 
 #### 3.2.5 [Harmony](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth2.0-teams/harmony/)
-**Mikhail Kalinin**:
-* We've been pretty much working on an update to v0.8 spec, we're almost there, but SSE part is still in progress.
-* We started to work on a slot clock mechanism, which is based on network-adjusted time proposed by Vitalik.
-* We have a PR so far with basic implementation of that protocol. I'm going to take my time on that. Also we have started a small research to investigate into attestation aggregation strategies.
-    * [Add draft spec for plaintext key exchange protocol #186](https://github.com/libp2p/specs/pull/186)
-* The goal is to evaluate an approach that doesn't involve building additional overlays, like handle tree.
-* Working on minimal libp2p or JVMs
-* Worked on multistream implementation recently
-* That's all from our side
+**Mikhail Kalinin**: Working on an update to v0.8 spec, we're almost there, but SSE part is still in progress.
+
+We started to work on a slot clock mechanism, which is based on network-adjusted time proposed by Vitalik.
+
+We have a PR so far with basic implementation of that protocol. I'm going to take my time on that. Also we have started a small research to investigate into attestation aggregation strategies.
+  * [Add draft spec for plaintext key exchange protocol #186](https://github.com/libp2p/specs/pull/186)
+
+The goal is to evaluate an approach that doesn't involve building additional overlays, like handle tree.
+
+Working on minimal libp2p or JVMs.
+
+Worked on multistream implementation recently.
+
 
 #### 3.2.6 [Lighthouse](https://github.com/sigp/lighthouse)
-**Adrian Manning**:
-* Updating lighthouse to v0.8
-* Have to re-optimize our tree-hash caching to include for more padding nodes
-* Defining more extensive HTTP APIs which is working to improve dev experience
-* Matt from ConsenSys building out some SSE partials into our codebase
-* Slowly been testing an initial version of discovery v5 in small testnets
-* Working towards standardizing a minimal libp2p for clients that are using libp2p
-* In doing so we've had to update our RPC
-    * In particular there's a discussion for the RPC to be using separate protocol IDs per request
-* There's a PR where we try to standardize the basic libp2p implementation
-    * [Libp2p Standardization Update #1281](https://github.com/ethereum/eth2.0-specs/pull/1281)
-* That's it from us.
+**Adrian Manning**: Updating lighthouse to v0.8
+
+
+Have to re-optimize our tree-hash caching to include for more padding nodes.
+
+Defining more extensive HTTP APIs which is working to improve dev experience.
+
+
+Matt from ConsenSys building out some SSE partials into our codebase.
+
+
+Slowly been testing an initial version of discovery v5 in small testnets.
+
+
+Working towards standardizing a minimal libp2p for clients that are using libp2p
+
+
+In doing so we've had to update our RPC. In particular there's a discussion for the RPC to be using separate protocol IDs per request
+
+
+[PR where we try to standardize the basic libp2p implementation](https://github.com/ethereum/eth2.0-specs/pull/1281).
+
+
 
 #### 3.2.7 [Prysmatic](https://github.com/prysmaticlabs)
-**Raul Jordan**
-* Caught up to v0.8, passing all spec tests
-* Issues with Genesis trigger
-* There's a lack of coverage for some spec test
-    * Passed all SSE spec tests
-    * Suprised that SSE failed in some Block sanity tests
-* Reason was because the way Python converts the length mixing-length into bytes did not cover longer types of lengths.
-* There was a list of values that were 512 in length. Encoded in Go gives different mixing length than in Python due to some edge cases, putting var ints.
-* Having coverage for longer based lists can be good in SSE.
-* Getting ready for optimizing Prism, code improvements, beautician testing, improvements to clients
+**Raul Jordan**: Caught up to v0.8, passing all spec tests.
+
+Issues with Genesis trigger.
+
+There's a lack of coverage for some spec test. Passed all SSE spec tests. Suprised that SSE failed in some Block sanity tests
+
+Having coverage for longer based lists can be good in SSE.
+
+Getting ready for optimizing Prism, code improvements, beautician testing, improvements to clients
 
 #### 3.2.8 [Lodestar](https://github.com/ChainSafe/lodestar)
-**Greg Markou**:
-* Trying to upgrade to v0.8
-* Began building dev tooling
-* Separating out types exclusively so that in Javascript you can import Ethereum 2 types into a React project down in the future
-    * Will help with providers, like a Web3.js provider.
-* SSE almost up-to-date, ironing out bugs with Proto and Prism
-* should be up-to-date on SimpleSerialize.com so that you guys can test it out online
-* We're working towards ensuring that BLS works properly in-browser as well
-    * Peculiar issues there will keep you updated
-* Getting Herumi so that we can have some diversity in BLS
-* In regards to the client, we comfortable to start doing Block production
-* One we finish our update to v0.8, we'll start doing our testnet so that we can see how that plays out.
-* Then getting that to work in-browser natively
-* One the side: we also have assembly scripts, picking up now that we've frozen again, getting a bunch of native code so that we can execute WASM in some section for speedup of shuffling.
-* See if we can convert SSE into purely assembly script for native WASM, seeing how that increases speed in the browser
-* So getting ready to do dev-tooling, that's kinda where we're at
-* Also, NIM, we're coming after you guys on the ERC20 contract, we'll get ya
+**Greg Markou**: Trying to upgrade to v0.8.
+
+Began building dev tooling.
+
+Separating out types exclusively so that in Javascript you can import Ethereum 2 types into a React project down in the future. Will help with providers, like a Web3.js provider.
+
+SSE almost up-to-date, ironing out bugs with Proto and Prism.
+
+Should be up-to-date on [SimpleSerialize.com](https://simpleserialize.com/) for open online testing.
+
+We're working towards ensuring that BLS works properly in-browser as well. Peculiar issues there will keep you updated.
+
+Getting Herumi so that we can have some diversity in BLS.
+
+In regards to the client, we comfortable to start doing Block production.
+
+One we finish our update to v0.8, we'll start doing our testnet so that we can see how that plays out.
+
+Then getting that to work in-browser natively.
+
+Getting ready to do dev-tooling.
+
+Also, NIM, we're coming after you guys on the ERC20 contract, we'll get ya.
 
 #### 3.2.9 [Parity](https://github.com/paritytech/parity-ethereum)
-**Wei Tang**:
-* Finished the markolization library last week, hopefully, want to extend that into a caching library, but a few missing pieces.
-* We're trying to update to v0.8 spec, issue we had was in the SSE which was quite a change
-    * Now a lot more types that require configurable parameters
-    * Wasn't expected because we were using a dynamic config
-* Won't work for us. Will need to change our config structs to static types so we have all the type information at compile-time
-* Large refactoring of the codebase
+**Wei Tang**: Finished the markolization library last week, hopefully, want to extend that into a caching library, but a few missing pieces.
 
+We're trying to update to v0.8 spec, issue we had was in the SSE which was quite a change.
 
+Large refactoring of the codebase.
 
 ### 3.3 [Research Updates](https://youtu.be/YB8o_5qjNBc?t=1725)
 #### 3.3.1 [Phase 0](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-phases/)
 
-**Justin Drake**:
-* In parallel to Phase 1 & Phase 2, the research team is doing is more education about Phase 0
-    * Various Education documents, I'm working on one as well
-    * On July 15th 1:00 PM GMT there will be a 2nd Ethereum 2.0 AMA, great opportunity to ask and answer questions related to your implementation work
-* Now that the spec is frozen, if you have questions about the design, feel free to reach out. I'm for example Justin Drake on Telegram.
+**Justin Drake**: In parallel to Phase 1 & Phase 2, the research team is doing is more education about Phase 0.
+
+On July 15th 1:00 PM GMT there will be a 2nd Ethereum 2.0 AMA, great opportunity to ask and answer questions related to your implementation work.
+
+Now that the spec is frozen, if you have questions about the design, feel free to reach out. I'm, for example, Justin Drake on Telegram.
 
 
 #### 3.3.2 [Phase 1](https://docs.ethhub.io/ethereum-roadmap/ethereum-2.0/eth-2.0-phases/)
 
-**Vitalik Buterin**
-
-  * On research-side there's a list of To-Do's for Proof-of-Custody and Shard Blocks
+**Vitalik Buterin**: On research-side there's a list of To-Do's for Proof-of-Custody and Shard Blocks
   * Discovered that our approach to light clients that involved Fiat Shimmering and Active Experts didn't particularly make sense
       * Simpler approach: Sign over the committee's route and allow clients to verify the committee's route directly
   * Simplifies and reduces the cost of the client protocol.
