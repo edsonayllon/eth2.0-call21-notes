@@ -18,7 +18,7 @@
 		- [3.2.4 Yeeth](#324-yeethhttpsgithubcomyeeth)
 		- [3.2.5 Harmony](#325-harmonyhttpsdocsethhubioethereum-roadmapethereum-20eth20-teamsharmony)
 		- [3.2.6 Lighthouse](#326-lighthousehttpsgithubcomsigplighthouse)
-		- [3.2.7 Prysmatic)](#327-prysmatichttpsgithubcomprysmaticlabs)
+		- [3.2.7 Prysmatic](#327-prysmatichttpsgithubcomprysmaticlabs)
 		- [3.2.8 Lodestar](#328-lodestarhttpsgithubcomchainsafelodestar)
 		- [3.2.9 Parity](#329-parityhttpsgithubcomparitytechparity-ethereum)
 	- [3.3 Research Updates](#33-research-updateshttpsyoutubeyb8o5qjnbct1725)
