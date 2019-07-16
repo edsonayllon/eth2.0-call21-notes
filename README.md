@@ -9,9 +9,9 @@
 - [2 Attendees](#2-attendees)
 - [3 Agenda](#3-agenda)
 	- [3.1 [Testing Updates](https://youtu.be/YB8o_5qjNBc?t=245)](#31-testing-updateshttpsyoutubeyb8o5qjnbct245)
-		- [3.1.1 Potential Overflow](#311-potential-overflow)
-		- [3.1.2 Spec Freeze](#312-spec-freeze)
-		- [3.1.3 Fuzzing](#313-fuzzing)
+		- [3.1.1 [Overflow in Slashing](https://github.com/ethereum/eth2.0-specs/pull/1286)](#311-overflow-in-slashinghttpsgithubcomethereumeth20-specspull1286)
+		- [3.1.2 [Spec Freeze](https://github.com/ethereum/eth2.0-specs/pull/1242)](#312-spec-freezehttpsgithubcomethereumeth20-specspull1242)
+		- [3.1.3 [Fuzzing](https://github.com/ethereum/eth2.0-specs/tree/dev/test_libs/pyspec/eth2spec/fuzzing)](#313-fuzzinghttpsgithubcomethereumeth20-specstreedevtestlibspyspeceth2specfuzzing)
 	- [3.2 [Client Updates](https://youtu.be/YB8o_5qjNBc?t=830)](#32-client-updateshttpsyoutubeyb8o5qjnbct830)
 	- [3.3 [Research Updates](https://youtu.be/YB8o_5qjNBc?t=1725)](#33-research-updateshttpsyoutubeyb8o5qjnbct1725)
 	- [3.4 [Network](https://youtu.be/YB8o_5qjNBc?t=2470)](#34-networkhttpsyoutubeyb8o5qjnbct2470)
@@ -76,14 +76,14 @@
 
 ### 3.1 [Testing Updates](https://youtu.be/YB8o_5qjNBc?t=245)
 
-#### 3.1.1 Potential Overflow
+#### 3.1.1 [Overflow in Slashing](https://github.com/ethereum/eth2.0-specs/pull/1286)
 
 **Danny Ryan**:
 * Prysmatic Labs, Terence [Tsao], found an issue where the calculation and slashing was, due to the way it was formatted, potentially overflowing in a tester for `uint64`
 * Relatively non-substantive changes (fixes, documentation, and things) in `v08x` branch [#1286](https://github.com/ethereum/eth2.0-specs/pull/1286). Includes a fix to this which alters the way the computation happens. Non-substantive, but doesn't overflow
 * Seems relatively important so will get out `v08x` in the next few days (includes other minor things people have found).
 
-#### 3.1.2 Spec Freeze
+#### 3.1.2 [Spec Freeze](https://github.com/ethereum/eth2.0-specs/pull/1242)
 
 **Diederik Loerakker**
 * Spec Freeze is over now, can stop throwing up to the spec and build.
@@ -91,7 +91,7 @@
 **Danny Ryan**:
 * Even after the Spec Freeze we will be expanding the coverage of the tests as needed.
 
-#### 3.1.3 Fuzzing
+#### 3.1.3 [Fuzzing](https://github.com/ethereum/eth2.0-specs/tree/dev/test_libs/pyspec/eth2spec/fuzzing)
 
 **Justin Drake**:
 * Goal: Basic Fuzzing infrastructure for all the clients.
