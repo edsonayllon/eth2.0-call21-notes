@@ -651,4 +651,4 @@ After that, we will reshuffle and send out more invitations to some of the teams
 
 **Danny Ryan**: It's easy and free to register.
 
-We will likely meet in 2 weeks, you can take a look at the calendar first. Talk to everyone soon. 
+We will likely meet in 2 weeks, you can take a look at the calendar first. Talk to everyone soon.
